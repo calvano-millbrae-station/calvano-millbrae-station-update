@@ -1,16 +1,16 @@
 import React from "react"
 import PropTypes from "prop-types"
+import BgSection from '../components/bgSection'
 // import { StaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
-import "./layout.css"
+import Nav from "./nav"
+// import "./layout.css"
 
 const Layout = ({ children }) => (
   <>
-    <Header />
-    <main>
-      {children}
-    </main>
+    <Nav />
+    <BgSection bgImageNum={1} isTopBg />
+    {children}
     <footer>
       I'm the footer.
     </footer>
