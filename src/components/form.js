@@ -39,7 +39,7 @@ export default class extends Component {
             isSubmitting,
             handleChange,
             handleBlur,
-            handleSubmit,
+            // handleSubmit,
             handleReset,
           } = props;
           return (

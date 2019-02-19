@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 // import { Link } from "gatsby"
-import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from 'reactstrap'
+// import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from 'reactstrap'
 import Scrollspy from 'react-scrollspy'
 import Scroll from './scroll'
 
-import logo from '../assets/images/logo.png'
+// import logo from '../assets/images/logo.png'
 
 export default (props) => (
   <nav id="nav" className={props.sticky ? 'alt' : ''}>
