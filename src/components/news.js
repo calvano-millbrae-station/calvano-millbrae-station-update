@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Row, Col } from 'reactstrap'
-import BgSection from './BgSection'
+import BgSection from './bgSection'
 
 export default () => (
   <>

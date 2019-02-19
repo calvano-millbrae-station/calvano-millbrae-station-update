@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 // import { Link } from "gatsby"
 import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from 'reactstrap'
 import Scrollspy from 'react-scrollspy'
-import Scroll from './Scroll'
+import Scroll from './scroll'
 
 import logo from '../assets/images/logo.png'
 
