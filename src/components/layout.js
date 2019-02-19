@@ -28,9 +28,9 @@ class Layout extends React.Component {
           onLeave={this._handleWaypointLeave} />
         <Nav sticky={this.state.stickyNav} />
         {this.props.children}
-        <footer>
+        {/* <footer>
           I'm the footer.
-        </footer>
+        </footer> */}
       </>
     )
   }
