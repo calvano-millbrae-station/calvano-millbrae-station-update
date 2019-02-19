@@ -97,6 +97,5 @@ export default () => (
         </Col>
       </Row>
     </Container>
-    <BgSection bgImageNum={4} />
   </>
 )

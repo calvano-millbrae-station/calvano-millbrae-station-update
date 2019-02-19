@@ -9,7 +9,11 @@
     background-image: url("../assets/images/millbrae1.png");
     &.first-bg {
       height: 600px;
+      background-position: 0 -150px;
     }
+    // &.nav-sticky {
+    //   margin-top: 190px;
+    // }
   }
   &.bg-image2 {
     background-image: url("../assets/images/millbrae2.png");
@@ -28,5 +32,22 @@
 .bg-mask {
   height: inherit;
   width: inherit;
-  background-color: $red-mask
+  background-color: $mask;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h1, h2 {
+    color: white;
+    text-shadow: 3px 3px rgba(0, 0, 0, 0.7);
+  }
+  h1 {
+    border: none;
+    font-size: 80px;
+  }
+  img {
+    // if we can't use Gateway image
+    // width: 210px;
+    width: 500px;
+  }
 }

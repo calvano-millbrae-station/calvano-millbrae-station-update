@@ -1,8 +1,43 @@
 $red: #d32300;
-$red-mask: rgba(211, 35, 0, 0.2);
+$mask: rgba(255,255,255, 0.5);
+$charcoal: #212027;
 
 @import '../components/bgSection.scss';
+@import '../components/nav.scss';
 
 body {
-  margin-top: 120px;
+  font-family: Roboto;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 20px 0;
+  margin: 0;
+  display: inline-block;
+  border-top: 1px solid $charcoal;
+  border-bottom: 1px solid $charcoal;
+}
+
+h2 {
+  color: $red;
+}
+
+h3 {
+  font-weight: 300;
+}
+
+// h1, h2, h3, p {
+//   text-align: center;
+// }
+
+.container {
+  padding: 50px 0;
 }

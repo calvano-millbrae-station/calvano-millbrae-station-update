@@ -9,21 +9,23 @@ import BgSection from './bgSection'
 const items = [
   {
     src: require('../assets/images/millbrae1.png'),
-    altText: 'Slide 1',
-    caption: 'Slide 1',
-    header: 'Slide 1 Header'
+    altText: 'Gateway at Millbrae Station Render 1'
   },
   {
     src: require('../assets/images/millbrae2.png'),
-    altText: 'Slide 2',
-    caption: 'Slide 2',
-    header: 'Slide 2 Header'
+    altText: 'Gateway at Millbrae Station Render 2'
   },
   {
     src: require('../assets/images/millbrae3.png'),
-    altText: 'Slide 3',
-    caption: 'Slide 3',
-    header: 'Slide 3 Header'
+    altText: 'Gateway at Millbrae Station Render 3',
+  },
+  {
+    src: require('../assets/images/millbrae4.png'),
+    altText: 'Gateway at Millbrae Station Render 4',
+  },
+  {
+    src: require('../assets/images/millbrae5.png'),
+    altText: 'Gateway at Millbrae Station Render 5',
   }
 ];
 
