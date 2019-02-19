@@ -7,12 +7,11 @@ $charcoal: #212027;
 
 body {
   font-family: Roboto;
-}
-
-header {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 50px;
+  header {
+    display: flex !important;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
 }
 
 h1 {
