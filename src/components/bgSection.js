@@ -8,7 +8,7 @@ export default (props) => (
           {/* if we can't use the gateway image */}
           {/* <img src={require('../assets/images/train.png')} alt="" />
           <h1>Gateway</h1>
-          <h2>at Millbrae Station</h2> */}\
+          <h2>at Millbrae Station</h2> */}
           <img src={require('../assets/images/gateway-black.png')} alt="" />
         </>
       }
