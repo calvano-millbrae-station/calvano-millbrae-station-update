@@ -31,9 +31,7 @@ nav {
       }
       &:hover, &.is-active {
         background-color: $red;
-        // a {
-        //   color: $charcoal;
-        // }
+        cursor: pointer;
       }
     }
   }

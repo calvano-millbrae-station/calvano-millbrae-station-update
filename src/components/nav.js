@@ -19,7 +19,7 @@ export default (props) => (
         'contact-us',
       ]}
       currentClassName="is-active"
-      offset={350}
+      offset={250}
     >
       {/* eslint-disable */}
       <li>
