@@ -116,3 +116,19 @@ body {
     }
   }
 }
+
+.card-wrapper {
+  &:not(:first-of-type) {
+    margin-top: 25px;
+  }
+  .btn {
+    background-color: $charcoal;
+    &:hover {
+      background-color: $red;
+    }
+  }
+  .card-title {
+    font-weight: 500;
+    font-size: 20px;
+  }
+}
