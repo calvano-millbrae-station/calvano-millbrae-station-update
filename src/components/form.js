@@ -3,7 +3,7 @@ import { FormGroup, Label, Input } from 'reactstrap'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
 
-const supportString = 'I SUPPORT THE GATEWAY PROPOSAL AT MILLBRAE BART STATION, WHICH CREATES CRITICALLY-NEEDED RENTAL HOUSING (400 HOMES) AND WILL ADD MORE THAN $400,000,000 TO THE PROPERTY TAX ROLLS FOR THE CITY OF MILLBRAE. THE PROPOSAL BENEFITS LOCAL MERCHANTS, CREATES ATTRACTIVE OPEN SPACE AND INCLUDES A BIKE/PEDESTRIAN BRIDGE ON THE BAY TRAIL. WITH THE NEW COMMUNITY LOCATED ADJACENT TO THE CALTRAIN AND BART STATION, WE BELIEVE THIS IS AN ENVIRONMENTALLY-FRIENDLY WAY TO GROW MILLBRAE, BOTH FOR RESIDENTS AND EXISTING BUSINESSES. THIS PROPOSAL PROVIDES RETAIL SPACE, OFFICE AND A HOTEL, PLUS 55 AFFORDABLE VETERAN-PREFERRED RENTALS, ALONG WITH $1,400,000 IN SCHOOL FEES FOR MILLBRAE. I SUPPORT GATEWAY!'
+const supportString = 'I support the Millbrae station project because it will bring several benefits to the community such as: creating a retail promenade where residents and commuters will experience an active people-friendly paseo bridging the connection between the downtown and the largest multimodal public transit artery in the Bay Area, improving pedestrian, bike, and transit paths, bettering the signalization and crosswalk at Chadbourn, and funding the community through the transit occupancy tax. I support!'
 
 // TODO distiguish if first or 2nd submit buttons were pressed
 export default class extends Component {
