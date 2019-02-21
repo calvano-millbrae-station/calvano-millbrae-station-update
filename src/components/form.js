@@ -3,7 +3,7 @@ import { FormGroup, Label, Input } from 'reactstrap'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
 
-const supportString = 'I support the Millbrae station project because it will bring several benefits to the community such as: creating a retail promenade where residents and commuters will experience an active people-friendly paseo bridging the connection between the downtown and the largest multimodal public transit artery in the Bay Area, improving pedestrian, bike, and transit paths, bettering the signalization and crosswalk at Chadbourn, and funding the community through the transit occupancy tax. I support!'
+const supportString = 'Transportation drives development, and the transportation system we build dictates the shape of real estate. For the past several decades federal transportation investments have focused primarily on building roads, as the market wanted. However, today’s real estate market is different, with consistently strong demand for homes and offices in walkable urban places—which are in short supply. We believe that our project aligns with the smart growth principles by complying with 9 out of 10 of their commandments.'
 
 // TODO distiguish if first or 2nd submit buttons were pressed
 export default class extends Component {
