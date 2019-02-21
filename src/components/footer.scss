@@ -1,10 +1,10 @@
 footer {
   background-color: $charcoal;
-  padding: 15px 30px;
-  display: flex;
+  padding: 15px 50px;
+  display: flex !important;
   align-items: center;
-  justify-content: space-between;
   flex-direction: row;
+  justify-content: space-between;
   span, a {
     color: white;
   }
@@ -16,6 +16,7 @@ footer {
 
 @media screen and (max-width: 767px) {
   footer {
+    padding: 10px 25px;
     flex-direction: column;
   }
 }
