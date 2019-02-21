@@ -1,0 +1,28 @@
+.hero {
+  background-image: url("../assets/images/millbrae1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 -200px;
+  width: 100%;
+  height: 650px;
+}
+
+.content {
+  height: 200px;
+  width: inherit;
+  background-color: $mask;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 450px;
+  }
+  span {
+    text-transform: uppercase;
+    font-size: 40px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    margin-top: 10px;
+  }
+}

@@ -1,7 +1,7 @@
 import React from "react"
 import Waypoint from 'react-waypoint'
 import PropTypes from "prop-types"
-import BgSection from '../components/bgSection'
+import Hero from './hero'
 // import { StaticQuery, graphql } from "gatsby"
 
 import Nav from "./nav"
@@ -22,7 +22,7 @@ class Layout extends React.Component {
   render() {
     return (
       <>
-        <BgSection isNavSticky={this.state.stickyNav} bgImageNum={1} isTopBg />
+        <Hero />
         <Waypoint
           onEnter={this._handleWaypointEnter}
           onLeave={this._handleWaypointLeave} />

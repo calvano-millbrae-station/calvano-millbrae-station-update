@@ -48,6 +48,6 @@ export default () => (
         </Col>
       </Row>
     </Container>
-    <BgSection bgImageNum={5} />
+    <BgSection bgImageNum={4} />
   </>
 )

@@ -1,8 +1,10 @@
 $red: #d32300;
 $mask: rgba(255,255,255, 0.5);
 $charcoal: #212027;
+$black: #212529;
 
 @import '../components/bgSection.scss';
+@import '../components/hero.scss';
 @import '../components/nav.scss';
 
 body {
@@ -25,6 +27,13 @@ body {
 
   h2 {
     color: $red;
+    margin-bottom: 25px;
+    &.focus {
+      text-shadow: 3px 3px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      letter-spacing: 5px;
+      margin-bottom: 50px;
+    }
   }
 
   h3 {
@@ -130,5 +139,34 @@ body {
   .card-title {
     font-weight: 500;
     font-size: 20px;
+  }
+}
+
+.get-involved {
+  .form-check-label {
+    font-size: 14px;
+  }
+}
+
+.pdf-link {
+  color: $black;
+  text-decoration: underline;
+  &:hover {
+    color: $red;
+  }
+}
+
+footer {
+  background-color: $charcoal;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  span, a {
+    color: white;
+  }
+  a:hover {
+    color: $red;
+    text-decoration: none;
   }
 }

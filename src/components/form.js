@@ -8,7 +8,7 @@ const supportString = 'I SUPPORT THE GATEWAY PROPOSAL AT MILLBRAE BART STATION, 
 // TODO distiguish if first or 2nd submit buttons were pressed
 export default class extends Component {
   state = {
-    isSupportSelected: false
+    isRegisterSelected: false
   }
 
   render() {
@@ -80,6 +80,13 @@ export default class extends Component {
               {errors.email &&
                 touched.email && <div className="input-feedback">{errors.email}</div>}
 
+              {!this.state.isRegisterSelected && !this.props.isContact &&
+                <FormGroup>
+                  <Label for="letter">Letter of Support</Label>
+                  <Input readOnly type="textarea" name="letter" size="200" id="letter" value={supportString} onChange={handleChange} onBlur={handleBlur} />
+                </FormGroup>
+              }
+
               {this.props.isContact ? (
                 <FormGroup>
                   <Label for="message">Message</Label>
@@ -90,24 +97,12 @@ export default class extends Component {
                   {/* <legend>Radio Buttons</legend> */}
                   <FormGroup check>
                     <Label check>
-                      <Input type="radio" id="updates-only" checked={!this.state.isSupportSelected} onClick={() => this.setState({ isSupportSelected: false })} value={values.getInvolved}/>{' '}
+                      <Input type="checkbox" name="updates-only" id="updates-only" onClick={() => this.setState({ isRegisterSelected: !this.state.isRegisterSelected })} value={values.getInvolved}/>{' '}
                       Register for Updates Only
-                    </Label>
-                  </FormGroup>
-                  <FormGroup check>
-                    <Label check>
-                      <Input type="radio" id="get-involved" checked={this.state.isSupportSelected} onClick={() => this.setState({ isSupportSelected: true })} value={values.getInvolved} />{' '}
-                      Support Gateway at Millbrae Station
                     </Label>
                   </FormGroup>
                 </FormGroup>
               )
-              }
-              {this.state.isSupportSelected &&
-                <FormGroup>
-                  <Label for="letter">Letter of Support</Label>
-                  <Input readOnly type="textarea" name="letter" size="200" id="letter" value={supportString} onChange={handleChange} onBlur={handleBlur} />
-                </FormGroup>
               }
               <button
                 type="button"
@@ -123,11 +118,11 @@ export default class extends Component {
                   values.letter = ""
                 } else {
                   values.message = ""
-                  if (this.state.isSupportSelected) {
+                  if (this.state.isRegisterSelected) {
+                    values.getInvoled = "Register for Updates Only"
+                  } else {
                     values.getInvoled = "Supports Gateway"
                     values.letter = supportString
-                  } else {
-                    values.getInvoled = "Register for Updates Only"
                   }
                 } }}
                 type="submit"
