@@ -1,0 +1,21 @@
+footer {
+  background-color: $charcoal;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  span, a {
+    color: white;
+  }
+  a:hover {
+    color: $red;
+    text-decoration: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  footer {
+    flex-direction: column;
+  }
+}

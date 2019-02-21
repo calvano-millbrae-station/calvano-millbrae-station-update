@@ -4,8 +4,11 @@ $charcoal: #212027;
 $black: #212529;
 
 @import '../components/bgSection.scss';
+@import '../components/footer.scss';
+@import '../components/form.scss';
 @import '../components/hero.scss';
 @import '../components/nav.scss';
+@import '../components/news.scss';
 
 body {
   font-family: Roboto;
@@ -42,110 +45,7 @@ body {
 }
 
 .container {
-  padding: 50px 0;
-}
-
-.get-involved,
-.contact-us {
-  input {
-    padding: .5rem;
-    font-size: 16px;
-    width: 100%;
-    display: block;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-  }
-
-  input:focus {
-    border-color: $red;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
-      0 0 0 3px rgba(0, 126, 255, 0.1);
-    outline: none;
-  }
-
-  input.error {
-    border-color: $red;
-  }
-
-  label {
-    font-weight: bold;
-    display: block;
-    font-size: 24px;
-    margin-bottom: .5rem;
-    &:not(:first-of-type) {
-      margin-top: 15px;
-    }
-  }
-
-  .input-feedback {
-    color: $red;
-    margin-top: .25rem;
-  }
-
-  button {
-    max-width: 150px;
-    margin: 20px 0;
-    padding: 12px 20px;
-    border-style: none;
-    border-radius: 5px;
-    background-color: $red;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
-    font-size: 17px;
-    font-weight: 500;
-    color: #fff;
-    cursor: pointer;
-    outline: none;
-    -webkit-appearance: none;
-  }
-
-  button:disabled {
-    opacity: .5;
-    cursor: not-allowed !important;
-  }
-
-  button + button {
-    margin-left: .5rem;
-  }
-
-  button.outline {
-    background-color: #eee;
-    border: 1px solid #aaa;
-    color: #555;
-  }
-  .form-group {
-    margin: 15px 0 0;
-    .form-check {
-      padding: 0;
-    }
-  }
-  textarea {
-    resize: none;
-    &.form-control {
-      height: 200px;
-    }
-  }
-}
-
-.card-wrapper {
-  &:not(:first-of-type) {
-    margin-top: 25px;
-  }
-  .btn {
-    background-color: $charcoal;
-    &:hover {
-      background-color: $red;
-    }
-  }
-  .card-title {
-    font-weight: 500;
-    font-size: 20px;
-  }
-}
-
-.get-involved {
-  .form-check-label {
-    font-size: 14px;
-  }
+  padding: 50px;
 }
 
 .pdf-link {
@@ -156,17 +56,22 @@ body {
   }
 }
 
-footer {
-  background-color: $charcoal;
-  padding: 15px 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  span, a {
-    color: white;
+@media screen and (max-width: 575px) {
+  body {
+    header {
+      margin-bottom: 25px;
+    }
+    h1 {
+      font-size: 50px;
+    }
+    h2 {
+      margin-bottom: 15px;
+      &.focus {
+        margin-bottom: 25px;
+      }
+    }
   }
-  a:hover {
-    color: $red;
-    text-decoration: none;
+  .container {
+    padding: 50px 25px 30px;
   }
 }

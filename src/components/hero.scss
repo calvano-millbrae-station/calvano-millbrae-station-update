@@ -2,7 +2,7 @@
   background-image: url("../assets/images/millbrae5.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 0 -100px;
+  // background-position: 0 -100px;
   width: 100%;
   height: 650px;
 }
@@ -24,5 +24,31 @@
     letter-spacing: 2px;
     font-weight: 500;
     margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .hero {
+    height: 300px;
+  }
+
+  .content {
+    height: 150px;
+    width: inherit;
+    background-color: $mask;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 250px;
+    }
+    span {
+      text-transform: uppercase;
+      font-size: 25px;
+      letter-spacing: 2px;
+      font-weight: 500;
+      margin-top: 10px;
+    }
   }
 }
