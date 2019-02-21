@@ -57,7 +57,7 @@ export default ({ data }) => (
               })}
           </Row>
         </Container>
-        <BgSection bgImageNum={5} />
+        <BgSection bgImageNum={1} />
       </>
     )} />
 )
