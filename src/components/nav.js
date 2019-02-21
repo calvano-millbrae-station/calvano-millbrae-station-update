@@ -36,14 +36,14 @@ export default (props) => (
       </li>
       <li>
         <Scroll type="id" element="plan" offset={-45}>
-          <a href="#">Plan</a>
+          <a href="#">Plan and Renderings</a>
         </Scroll>
       </li>
-      <li>
+      {/* <li>
         <Scroll type="id" element="renderings" offset={-45}>
           <a href="#">Renderings</a>
         </Scroll>
-      </li>
+      </li> */}
       <li>
         <Scroll type="id" element="news" offset={-45}>
           <a href="#">News</a>
