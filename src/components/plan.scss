@@ -1,4 +1,7 @@
 .carousel-container {
-  width: 90vw;
   padding-bottom: 50px;
+  .carousel {
+    width: 80%;
+    margin: auto;
+  }
 }
