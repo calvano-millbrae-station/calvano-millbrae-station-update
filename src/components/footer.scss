@@ -1,5 +1,5 @@
 footer {
-  background-color: $charcoal;
+  background-color: $gray;
   padding: 15px 50px;
   display: flex !important;
   align-items: center;
@@ -7,10 +7,25 @@ footer {
   justify-content: space-between;
   span, a {
     color: white;
+    font-size: 14px;
+  }
+  span {
+    display: block;
   }
   a:hover {
     color: $red;
     text-decoration: none;
+  }
+  .footer-right-col {
+    float: right;
+    text-align: center;
+  }
+  .contact-info {
+    display: inline-block;
+    flex: auto;
+  }
+  .home-icon {
+    width: 20px;
   }
 }
 
@@ -18,9 +33,8 @@ footer {
   footer {
     padding: 10px 25px;
     span, a {
-      font-size: 14px;
     }
-    img {
+    img.logo {
       width: 180px;
     }
   }

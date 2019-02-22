@@ -1,6 +1,8 @@
 $red: #d32300;
 $mask: rgba(255,255,255, 0.5);
 $charcoal: #212027;
+$gray: #a0a0a0;
+$dark-gray: #545454;
 $black: #212529;
 
 @import '../components/bgSection.scss';
@@ -9,6 +11,7 @@ $black: #212529;
 @import '../components/hero.scss';
 @import '../components/nav.scss';
 @import '../components/news.scss';
+@import '../components/plan.scss';
 
 body {
   font-family: Roboto;
@@ -27,6 +30,7 @@ body {
     border-top: 1px solid $charcoal;
     border-bottom: 1px solid $charcoal;
     text-align: center;
+    color: $dark-gray;
   }
 
   h2 {
