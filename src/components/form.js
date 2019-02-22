@@ -43,7 +43,7 @@ export default class extends Component {
             handleReset,
           } = props;
           return (
-            <form method="POST" action="https://formspree.io/jdavet1244@gmail.com">
+            <form method="POST" action="https://formspree.io/calvano@millbraestation.com">
               <label htmlFor="name" style={{ display: 'block' }}>
                 Name
               </label>
