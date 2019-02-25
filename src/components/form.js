@@ -1,137 +1,119 @@
 import React, { Component } from 'react'
-import { FormGroup, Label, Input } from 'reactstrap'
-import { Formik } from 'formik'
-import * as Yup from 'yup'
-
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+// import * as Yup from 'yup'
+import firebase from './firebase'
 const supportString = 'I support the Millbrae station project because it will bring several benefits to the community such as: creating a retail promenade where residents and commuters will experience an active people friendly paseo bridging the connection between the downtown and the largest multimodal public transit artery in the bay area,  improving the pedestrian, bike, and transit paths, improving the signalization and funding the community through the transit occupancy tax. I support!'
 
-// TODO distiguish if first or 2nd submit buttons were pressed
+const Checkbox = (props) => (
+  <Field name={props.name}>
+    {({ field, form }) => {
+      return (
+        <label className="form-check-label">
+          <input
+            type="checkbox"
+            {...props}
+            // checked={field.value.includes(props.value)}
+            checked={props.value}
+            onChange={() => {
+              // don't know why props.value is the opposite of the state,
+              // but can't spend more time trying to fix it
+              form.setFieldValue(props.name, !props.value);
+            }}
+          />
+          <span>Register for updates only</span>
+        </label>
+      )
+    }}
+  </Field>
+)
+
 export default class extends Component {
   state = {
     isRegisterSelected: false
   }
 
+  getCurrentDate = () => {
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1; //January is 0!
+    var yyyy = today.getFullYear();
+    if (dd < 10) {
+    dd = '0' + dd;
+    }
+
+    if (mm < 10) {
+      mm = '0' + mm;
+    }
+
+    today = mm + '/' + dd + '/' + yyyy;
+    return today
+  }
+
   render() {
     return (
       <Formik
-        initialValues={{ name: '', email: '' }}
+        initialValues={{ name: '', email: '', updatesOnly: false, letter: '' }}
+        validate={values => {
+          let errors = {};
+          if (!values.name) {
+            errors.name = 'Your name is required';
+          }
+          if (!values.email) {
+            errors.email = 'Your email is required';
+          } else if (
+            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+          ) {
+            errors.email = 'Invalid email address';
+          }
+          return errors;
+        }}
         onSubmit={(values, { setSubmitting }) => {
+          const letterValue = this.state.isRegisterSelected ? "" : supportString
+          values.letter = letterValue
+          const contactsRef = firebase.database().ref('contacts');
+          const contact = {
+            name: values.name,
+            email: values.email,
+            updatesOnly: values.updatesOnly,
+            letter: values.letter,
+            date: this.getCurrentDate()
+          }
           setTimeout(() => {
-            // alert(JSON.stringify(values, null, 2));
-            alert(`Thank you for your ${this.props.isContact ? 'message.' : 'support.'}`);
+            contactsRef.push(contact);
             setSubmitting(false);
-          }, 500);
+            window.open("/thanks", "_self")
+          }, 400);
         }}
-        validationSchema={Yup.object().shape({
-          name: Yup.string()
-            .required('Name is required'),
-          email: Yup.string()
-            .email()
-            .required('Email is required'),
-        })}
       >
-        {props => {
-          const {
-            values,
-            touched,
-            errors,
-            dirty,
-            isSubmitting,
-            handleChange,
-            handleBlur,
-            // handleSubmit,
-            handleReset,
-          } = props;
-          return (
-            <form method="POST" action="https://formspree.io/calvano@millbraestation.com">
-              <label htmlFor="name" style={{ display: 'block' }}>
-                Name
+        {({ isSubmitting }) => (
+          <Form>
+            <label htmlFor="name">
+              Name
+              <Field type="name" name="name" placeholder="Enter your name" />
+            </label>
+            <ErrorMessage className="error" name="name" component="div" />
+            <label htmlFor="email">
+              Email
+              <Field type="email" name="email" placeholder="Enter your email" />
+            </label>
+            <ErrorMessage className="error" name="email" component="div" />
+            {!this.state.isRegisterSelected &&
+              <label htmlFor="letter">
+                Letter of Support
+                <Field
+                  component="textarea"
+                  name="letter"
+                  value={supportString}
+                  disabled
+                  aria-describedby="employee-id-hint"/>
               </label>
-              <input
-                id="name"
-                name="name"
-                placeholder="Enter your name name"
-                type="text"
-                value={values.name}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                className={
-                  errors.name && touched.name ? 'text-input error' : 'text-input'
-                }
-              />
-              {errors.name &&
-                touched.name && <div className="input-feedback">{errors.name}</div>}
-
-              <label htmlFor="email" style={{ display: 'block' }}>
-                Email
-              </label>
-              <input
-                id="email"
-                name="email"
-                placeholder="Enter your email"
-                type="text"
-                value={values.email}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                className={
-                  errors.email && touched.email ? 'text-input error' : 'text-input'
-                }
-              />
-              {errors.email &&
-                touched.email && <div className="input-feedback">{errors.email}</div>}
-
-              {!this.state.isRegisterSelected && !this.props.isContact &&
-                <FormGroup>
-                  <Label for="letter">Letter of Support</Label>
-                  <Input readOnly type="textarea" name="letter" size="200" id="letter" value={supportString} onChange={handleChange} onBlur={handleBlur} />
-                </FormGroup>
-              }
-
-              {this.props.isContact ? (
-                <FormGroup>
-                  <Label for="message">Message</Label>
-                  <Input type="textarea" name="message" size="200" id="message" value={values.message} onChange={handleChange} onBlur={handleBlur} placeholder="Type your message here" />
-                </FormGroup>
-              ) : (
-                <FormGroup tag="fieldset">
-                  {/* <legend>Radio Buttons</legend> */}
-                  <FormGroup check>
-                    <Label check>
-                      <Input type="checkbox" name="updates-only" id="updates-only" onClick={() => this.setState({ isRegisterSelected: !this.state.isRegisterSelected })} value={values.getInvolved}/>{' '}
-                      Register for Updates Only
-                    </Label>
-                  </FormGroup>
-                </FormGroup>
-              )
-              }
-              <button
-                type="button"
-                className="outline"
-                onClick={handleReset}
-                disabled={!dirty || isSubmitting}
-              >
-                Reset
-              </button>
-              <button onClick={() => {
-                if(this.props.isContact) {
-                  values.getInvoled = ""
-                  values.letter = ""
-                } else {
-                  values.message = ""
-                  if (this.state.isRegisterSelected) {
-                    values.getInvoled = "Register for Updates Only"
-                  } else {
-                    values.getInvoled = "Supports Gateway"
-                    values.letter = supportString
-                  }
-                } }}
-                type="submit"
-                disabled={isSubmitting}>
-                Submit
-              </button>
-            </form>
-          );
-        }}
+            }
+            <Checkbox name="updatesOnly" onClick={() => this.setState({ isRegisterSelected: !this.state.isRegisterSelected })} value={this.state.isRegisterSelected}/>
+            <button type="submit" disabled={isSubmitting}>
+              Submit
+            </button>
+          </Form>
+        )}
       </Formik>
     )
   }
