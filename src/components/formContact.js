@@ -17,13 +17,13 @@ class FormContact extends React.Component {
       )
       .then(function (response) {
         console.log(response);
+        window.open("/thanks", "_self")
       })
       .catch(function (error) {
         console.log(error);
       });
 
     e.preventDefault();
-    window.open("/thanks", "_self")
   }
 
   handleFields = e => this.setState({ [e.target.name]: e.target.value });
