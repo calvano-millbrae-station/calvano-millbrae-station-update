@@ -8,7 +8,7 @@ export default (props) => (
   <StaticQuery
     query={graphql`
       query {
-        hero: file(relativePath: { eq: "renderings/millbrae5.webp" }) {
+        hero: file(relativePath: { eq: "renderings/millbrae5.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 2048) {
               ...GatsbyImageSharpFluid_withWebp
@@ -36,7 +36,7 @@ export default (props) => (
               className={`hero ${props.isHome ? "" : "not-home-hero"}`}
               fluid={imageData}>
               <div className="content">
-                <img src={require("../assets/images/site-logo.webp")} alt="Millbrae Station Logo" />
+                <img src={require("../assets/images/site-logo.png")} alt="Millbrae Station Logo" />
                 <span>{props.isAdmin ? "Admin Page" : "Millbrae Station"}</span>
               </div>
             </BackgroundImage>
@@ -44,7 +44,7 @@ export default (props) => (
         ) : (
           <div className={`hero ${props.isHome ? "" : "not-home-hero"}`}>
             <div className="content">
-              <img src={require("../assets/images/site-logo.webp")} alt="" />
+              <img src={require("../assets/images/site-logo.png")} alt="" />
               <span>{props.isAdmin ? "Admin Page" : "Millbrae Station"}</span>
             </div>
           </div>
