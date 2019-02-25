@@ -74,7 +74,7 @@ export default class extends Component {
           const contact = {
             name: values.name,
             email: values.email,
-            updatesOnly: values.updatesOnly,
+            updatesOnly: values.updatesOnly.toString(),
             letter: values.letter,
             date: this.getCurrentDate()
           }
