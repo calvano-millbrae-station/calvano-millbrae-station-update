@@ -9,7 +9,9 @@ export default (props) => (
           <a href='mailto: mark@calvano.com'>Mark@Calvano.com</a>
           <span>(415) 922-0449</span>
           <a href="https://www.calvano.com"><img className="home-icon" src={require('../assets/images/home.png')} alt="" /></a>
+          {/* eslint-disable */}
           <a onClick={props.login}><img className="lock-icon" src={require('../assets/images/lock.png')} alt="" /></a>
+          {/* eslint-enable */}
         </div>
       </div>
     </footer>
