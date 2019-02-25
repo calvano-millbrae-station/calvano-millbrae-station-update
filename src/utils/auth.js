@@ -20,10 +20,12 @@ export default class Auth {
   }
 
   logout = () => {
-    localStorage.removeItem('access_token')
-    localStorage.removeItem('id_token')
-    localStorage.removeItem('expires_at')
-    localStorage.removeItem('user')
+    if (typeof window !== "undefined") {
+      localStorage.removeItem('access_token')
+      localStorage.removeItem('id_token')
+      localStorage.removeItem('expires_at')
+      localStorage.removeItem('user')
+    }
   }
 
   handleAuthentication = () => {
@@ -43,26 +45,32 @@ export default class Auth {
   }
 
   isAuthenticated = () => {
-    const expiresAt = JSON.parse(localStorage.getItem('expires_at'))
-    return new Date().getTime() < expiresAt
+    if (typeof window !== 'undefined') {
+      const expiresAt = JSON.parse(localStorage.getItem('expires_at'))
+      return new Date().getTime() < expiresAt
+    }
   }
 
   setSession = authResult => {
     const expiresAt = JSON.stringify(
       authResult.expiresIn * 1000 + new Date().getTime()
     )
-    localStorage.setItem('access_token', authResult.accessToken)
-    localStorage.setItem('id_token', authResult.idToken)
-    localStorage.setItem('expires_at', expiresAt)
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('access_token', authResult.accessToken)
+      localStorage.setItem('id_token', authResult.idToken)
+      localStorage.setItem('expires_at', expiresAt)
 
-    this.auth0.client.userInfo(authResult.accessToken, (err, user) => {
-      localStorage.setItem('user', JSON.stringify(user))
-    })
+      this.auth0.client.userInfo(authResult.accessToken, (err, user) => {
+        localStorage.setItem('user', JSON.stringify(user))
+      })
+    }
   }
 
   getUser = () => {
-    if (localStorage.getItem('user')) {
-      return JSON.parse(localStorage.getItem('user'))
+    if (typeof window !== 'undefined') {
+      if (localStorage.getItem('user')) {
+        return JSON.parse(localStorage.getItem('user'))
+      }
     }
   }
 
