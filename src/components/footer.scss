@@ -5,6 +5,11 @@ footer {
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
+  // &.not-home-footer {
+  //   position: absolute;
+  //   bottom: 0;
+  //   width: 100%;
+  // }
   span, a {
     color: white;
     font-size: 14px;
@@ -12,9 +17,12 @@ footer {
   span {
     display: block;
   }
-  a:hover {
-    color: $red;
-    text-decoration: none;
+  a {
+    &:hover {
+      color: $red;
+      text-decoration: none;
+      cursor: pointer;
+    }
   }
   .footer-right-col {
     float: right;
@@ -26,6 +34,11 @@ footer {
   }
   .home-icon {
     width: 20px;
+  }
+  .lock-icon {
+    width: 14px;
+    display: inline-block;
+    margin-left: 5px
   }
 }
 

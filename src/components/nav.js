@@ -24,9 +24,7 @@ export default (props) => (
       {/* eslint-disable */}
       <li>
         <Scroll type="id" element="overview" offset={0}>
-          <a href="#">
-            <a href="#">Overview</a>
-          </a>
+          <a href="#">Overview</a>
         </Scroll>
       </li>
       <li>
