@@ -78,11 +78,14 @@ export default class extends Component {
             letter: values.letter,
             date: this.getCurrentDate()
           }
-          setTimeout(() => {
-            contactsRef.push(contact);
+          contactsRef.push(contact)
+          .then(() => {
             setSubmitting(false);
             window.open("/thanks", "_self")
-          }, 400);
+          })
+          .catch(function (error) {
+            console.log(error);
+          })
         }}
       >
         {({ isSubmitting }) => (
