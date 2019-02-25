@@ -2,6 +2,7 @@ import React from "react"
 import Waypoint from 'react-waypoint'
 import PropTypes from "prop-types"
 import Hero from './hero'
+import Footer from "./footer"
 // import { StaticQuery, graphql } from "gatsby"
 
 import Nav from "./nav"
@@ -22,15 +23,15 @@ class Layout extends React.Component {
   render() {
     return (
       <>
-        <Hero />
+        <Hero {...this.props} />
         <Waypoint
           onEnter={this._handleWaypointEnter}
           onLeave={this._handleWaypointLeave} />
-        <Nav sticky={this.state.stickyNav} />
+        {this.props.isHome &&
+          <Nav sticky={this.state.stickyNav} />
+        }
         {this.props.children}
-        {/* <footer>
-          I'm the footer.
-        </footer> */}
+        <Footer {...this.props} />
       </>
     )
   }
