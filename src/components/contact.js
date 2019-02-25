@@ -4,7 +4,7 @@ import {
   Row,
   Col, } from 'reactstrap'
 
-import Form from './form'
+import FormContact from './formContact'
 
 export default () => (
   <>
@@ -17,7 +17,7 @@ export default () => (
           <main>
             <article>
               <h3>Millbrae Station</h3>
-              <Form isContact />
+              <FormContact />
             </article>
           </main>
         </Col>
