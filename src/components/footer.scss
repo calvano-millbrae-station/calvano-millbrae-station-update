@@ -5,11 +5,11 @@ footer {
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  &.not-home-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-  }
+  // &.not-home-footer {
+  //   position: absolute;
+  //   bottom: 0;
+  //   width: 100%;
+  // }
   span, a {
     color: white;
     font-size: 14px;
