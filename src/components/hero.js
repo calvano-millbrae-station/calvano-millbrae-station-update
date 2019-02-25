@@ -8,7 +8,7 @@ export default (props) => (
   <StaticQuery
     query={graphql`
       query {
-        hero: file(relativePath: { eq: "millbrae5.webp" }) {
+        hero: file(relativePath: { eq: "renderings/millbrae5.webp" }) {
           childImageSharp {
             fluid(quality: 100, maxWidth: 2048) {
               ...GatsbyImageSharpFluid_withWebp
