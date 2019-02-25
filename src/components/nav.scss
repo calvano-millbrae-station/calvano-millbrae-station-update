@@ -23,6 +23,7 @@ nav {
       display: flex;
       align-items: center;
       padding: 0;
+      background-color: $gray;
       &:first-of-type {
         // border-left: 1px solid rgba(0, 0, 0, 0.3);
       }
@@ -41,6 +42,23 @@ nav {
     }
   }
 }
+
+// fix nav bug on ipads
+@supports (-webkit-overflow-scrolling: touch) {
+  nav {
+    ul {
+      li {
+        &:hover {
+          background-color: $gray;
+        }
+        &.is-active {
+          background-color: $red;
+        }
+      }
+    }
+  }
+}
+
 
 @media screen and (max-width: 767px) {
   nav {
