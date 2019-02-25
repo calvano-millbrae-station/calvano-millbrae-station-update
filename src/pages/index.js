@@ -7,7 +7,7 @@ import Plan from "../components/plan"
 import News from "../components/news"
 import Contact from "../components/contact"
 import Admin from "../components/admin"
-import Auth from '../utils/Auth'
+import Auth from '../utils/auth'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.scss'
