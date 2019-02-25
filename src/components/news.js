@@ -42,13 +42,13 @@ export default ({ data }) => (
               {data.allMarkdownRemark.edges.map(({ node }, index) => {
                 const { frontmatter, excerpt } = node
                 return (
-                  <Col md={{ size: 8, offset: 2 }} className="card-wrapper">
-                    <article>
-                    <Card body>
-                      <CardTitle>{frontmatter.title}</CardTitle>
-                      <CardText>{excerpt}</CardText>
-                      <a href={frontmatter.sourceUrl}>
-                        <Button>Go to {frontmatter.source} article</Button>
+                  <Col key={`col-${node.id}`} md={{ size: 8, offset: 2 }} className="card-wrapper">
+                    <article key={`article-${node.id}`}>
+                    <Card key={`card-${node.id}`} body>
+                      <CardTitle key={`title-${node.id}`}>{frontmatter.title}</CardTitle>
+                      <CardText key={`text-${node.id}`}>{excerpt}</CardText>
+                      <a key={`a-${node.id}`} href={frontmatter.sourceUrl}>
+                        <Button key={`button-${node.id}`}>Go to {frontmatter.source} article</Button>
                       </a>
                     </Card>
                   </article>

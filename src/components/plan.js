@@ -5,27 +5,27 @@ import BgSection from './bgSection'
 
 const items = [
   {
-    src: require('../assets/images/renderings/millbrae1.webp'),
+    src: require('../assets/images/renderings/millbrae1.jpg'),
     altText: 'Millbrae Station Render 1',
     caption: ''
   },
   {
-    src: require('../assets/images/renderings/millbrae2.webp'),
+    src: require('../assets/images/renderings/millbrae2.jpg'),
     altText: 'Millbrae Station Render 2',
     caption: ''
   },
   {
-    src: require('../assets/images/renderings/millbrae3.webp'),
+    src: require('../assets/images/renderings/millbrae3.jpg'),
     altText: 'Millbrae Station Render 3',
     caption: ''
   },
   {
-    src: require('../assets/images/renderings/millbrae4.webp'),
+    src: require('../assets/images/renderings/millbrae4.jpg'),
     altText: 'Millbrae Station Render 4',
     caption: ''
   },
   {
-    src: require('../assets/images/renderings/millbrae5.webp'),
+    src: require('../assets/images/renderings/millbrae5.jpg'),
     altText: 'Millbrae Station Render 5',
     caption: ''
   }
