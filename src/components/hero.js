@@ -34,7 +34,7 @@ export default (props) => (
           className={`hero ${props.isHome ? "" : "not-home-hero"}`}
           fluid={imageData}>
           <div className="content">
-            <img src={require("../assets/images/millbrae-logo.webp")} alt="Millbrae Station Logo" />
+            <img src={require("../assets/images/site-logo.webp")} alt="Millbrae Station Logo" />
             <span>{props.isAdmin ? "Admin Page" : "Millbrae Station"}</span>
           </div>
         </BackgroundImage>
