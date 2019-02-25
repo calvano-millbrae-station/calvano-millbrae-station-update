@@ -32,8 +32,8 @@ const items = [
 ];
 
 export default () => (
-  <>
-    <Container className="plan mb-0 pb-0" id="plan">
+  <div id="plan">
+    <Container className="plan mb-0 pb-0">
       <Row>
         <Col>
           <header>
@@ -57,5 +57,5 @@ export default () => (
       <UncontrolledCarousel interval={false} autoPlay={false} items={items} />
     </Container>
     <BgSection bgImageNum={4} />
-  </>
+  </div>
 )
