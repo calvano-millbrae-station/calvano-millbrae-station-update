@@ -25,11 +25,7 @@ export default () => (
                 <li><strong>Crossing at Chadbourne: </strong>Our research into the area has shed light on the need for a solution to the many tragic pedestrian accidents and fatalities along the El Camino/Millbrae Ave corridor. Our project not only responds to those requests but has incorporated them into the retail promenade, and plants the seed envisioned in the city’s Priority Development Area Specific Plan, (and also in San Mateo County’s, Grand Boulevard Initiative). This signalized, “protected crosswalk” at Chadbourn provides a much-desired and much-needed improvement for the Millbrae community.</li>
 
                 <li><strong>Increased Revenue – Transit Occupancy Tax: </strong>The high-density hotel is estimated to generate approximately $2,000,000 per year in income to city. Additionally, the project anticipates a land exchange whereby the City will own the land beneath the hotel and the applicant leases it. When the lease expires, the City will continue to own the land. This creates additional value because the City can monetize their land while retaining ownership.</li>
-
-                <li><strong>Smart Growth: </strong>Transportation drives development, and the transportation system we build dictates the shape of real estate. For the past several decades, federal transportation investments focused primarily on building roads. Today’s real estate market is different, with a consistently strong demand for homes and offices in walkable, urban places — which are in short supply. We believe that our project aligns with the smart growth principles by complying with 9 out of 10 of their commandments.</li>
               </ul>
-
-              {/* <p><strong>Smart Growth: </strong>Transportation drives development, and the transportation system we build dictates the shape of real estate. For the past several decades federal Transportation investments have focused primarily on building roads, as the market wanted. However, today’s real estate market is different, with consistently strong demand for homes and offices in walkable urban places — which are in short supply. We believe that our project aligns with the smart growth principles by complying with 9 out of 10 of their commandments.</p> */}
             </article>
           </main>
         </Col>
