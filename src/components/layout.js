@@ -5,7 +5,7 @@ import Hero from './hero'
 import Footer from "./footer"
 // import { StaticQuery, graphql } from "gatsby"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.scss'
+import '../pages/index.scss'
 import Nav from "./nav"
 // import "./layout.css"
 
