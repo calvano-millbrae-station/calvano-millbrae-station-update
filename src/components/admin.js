@@ -34,7 +34,7 @@ export default class extends React.Component {
     this.props.auth.logout()
     // can't get redirects to work via auth0 api
     // so I'm cheating
-    window.open("/", "_self")
+    window.open("https://millbraestation.com/", "_self")
   }
 
   render() {
