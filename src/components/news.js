@@ -7,20 +7,19 @@ export default ({ data }) => (
   <StaticQuery
     query={graphql`
       query {
-        allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date]},
+        allContentfulNews(
+          sort: { order: DESC, fields: [date]},
         ) {
           edges {
             node {
               id
-              frontmatter {
-                title
-                date(formatString: "YYYY-MM-DD")
-                dateText
-                source
-                sourceUrl
+              title
+              date
+              source
+              sourceUrl
+              summary {
+                summary
               }
-              excerpt
             }
           }
         }
@@ -39,16 +38,17 @@ export default ({ data }) => (
             </Col>
           </Row>
           <Row>
-              {data.allMarkdownRemark.edges.map(({ node }, index) => {
-                const { frontmatter, excerpt } = node
+              {data.allContentfulNews.edges.map(({ node }, index) => {
+                const { id, title, source, sourceUrl } = node
+                const { summary } = node.summary
                 return (
-                  <Col key={`col-${node.id}`} md={{ size: 8, offset: 2 }} className="card-wrapper">
-                    <article key={`article-${node.id}`}>
-                    <Card key={`card-${node.id}`} body>
-                      <CardTitle key={`title-${node.id}`}>{frontmatter.title}</CardTitle>
-                      <CardText key={`text-${node.id}`}>{excerpt}</CardText>
-                      <a key={`a-${node.id}`} href={frontmatter.sourceUrl}>
-                        <Button key={`button-${node.id}`}>Go to {frontmatter.source} article</Button>
+                  <Col key={`col-${id}`} md={{ size: 8, offset: 2 }} className="card-wrapper">
+                    <article key={`article-${id}`}>
+                    <Card key={`card-${id}`} body>
+                      <CardTitle key={`title-${id}`}>{title}</CardTitle>
+                      <CardText key={`text-${id}`}>{summary}</CardText>
+                      <a key={`a-${id}`} href={sourceUrl}>
+                        <Button key={`button-${id}`}>Go to {source} article</Button>
                       </a>
                     </Card>
                   </article>
