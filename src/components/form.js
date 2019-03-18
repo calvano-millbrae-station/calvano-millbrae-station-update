@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form, Field, ErrorMessage } from 'formik'
+import { StaticQuery, graphql } from 'gatsby'
 // import * as Yup from 'yup'
 import firebase from './firebase'
-const supportString = 'I support the Millbrae Station project because it will bring several benefits to the community such as: 1) Creating a retail promenade where residents and commuters will experience an active people friendly paseo, 2) Improving the bridging connection between the downtown and the largest multimodal public transit artery in the Bay Area, 3) Improving the pedestrian, bike, and transit path, and 4) Funding the community through the transit occupancy tax. I support!'
+// const supportString = 'I support the Millbrae Station project because it will bring several benefits to the community such as: 1) Creating a retail promenade where residents and commuters will experience an active people friendly paseo, 2) Improving the bridging connection between the downtown and the largest multimodal public transit artery in the Bay Area, 3) Improving the pedestrian, bike, and transit path, and 4) Funding the community through the transit occupancy tax. I support!'
 
 const Checkbox = (props) => (
   <Field name={props.name}>
@@ -27,7 +28,7 @@ const Checkbox = (props) => (
   </Field>
 )
 
-export default class extends Component {
+class PageForm extends Component {
   state = {
     isRegisterSelected: false
   }
@@ -50,6 +51,7 @@ export default class extends Component {
   }
 
   render() {
+    const supportString = this.props.data.letter.edges[0].node.text.text
     return (
       <Formik
         initialValues={{ name: '', email: '', updatesOnly: false, letter: '' }}
@@ -121,3 +123,21 @@ export default class extends Component {
     )
   }
 }
+
+export default props => (
+  <StaticQuery
+    query={graphql`
+      query {
+        letter: allContentfulLetterOfSupport {
+          edges {
+            node {
+              text {
+                text
+              }
+            }
+          }
+        }
+      }
+    `}
+    render={data => <PageForm data={data} {...props} />} />
+)

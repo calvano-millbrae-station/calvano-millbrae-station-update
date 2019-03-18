@@ -65,7 +65,6 @@ export default (props) => (
           caption: ''
         }
       ];
-      console.log(renderingsArray)
       return (
         <>
           <div id="plan">
