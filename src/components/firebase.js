@@ -1,6 +1,6 @@
 import firebase from 'firebase'
 const config = {
-  apiKey:process.env.FIREBASE_API_KEY,
+  apiKey: process.env.FIREBASE_API_KEY,
   authDomain: "calvano-millbrae-station.firebaseapp.com",
   databaseURL: "https://calvano-millbrae-station.firebaseio.com",
   projectId: "calvano-millbrae-station",
