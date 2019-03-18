@@ -2,13 +2,8 @@
 import auth0 from 'auth0-js'
 import { navigate } from 'gatsby'
 
-<<<<<<< HEAD
 const AUTH0_DOMAIN = process.env.AUTH0_DOMAIN
 const AUTH0_CLIENT_ID = process.env.AUTH0_CLIENT_ID
-=======
-const AUTH0_DOMAIN = 'process.env.AUTH0_DOMAIN'
-const AUTH0_CLIENT_ID = 'process.env.AUTH0_CLIENT_ID'
->>>>>>> bf845e97d32bc38a5c5b3c135b5e6d1eef6ebb66
 
 export default class Auth {
   auth0 = new auth0.WebAuth({
