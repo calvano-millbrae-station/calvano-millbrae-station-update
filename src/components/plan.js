@@ -18,7 +18,7 @@ export default (props) => (
            }
          }
        }
-       renderings: allContentfulAsset(filter:{file:{contentType: {eq:"image/jpeg"}}}) {
+       renderings: allContentfulAsset {
          edges {
            node {
              fluid(quality: 100, maxWidth: 2400) {
