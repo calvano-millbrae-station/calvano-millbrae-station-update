@@ -1,7 +1,7 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import { Container, Row, Col, Card, Button, CardTitle, CardText } from 'reactstrap'
-import BgSection from './bgSection'
+import BackgroundImage from 'gatsby-background-image'
 
 export default ({ data }) => (
   <StaticQuery
@@ -20,6 +20,13 @@ export default ({ data }) => (
               summary {
                 summary
               }
+            }
+          }
+        }
+        bgImage: file(relativePath: { eq: "renderings/millbrae5.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 2400) {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
@@ -57,7 +64,11 @@ export default ({ data }) => (
               })}
           </Row>
         </Container>
-        <BgSection bgImageNum={5} />
+        <BackgroundImage
+          Tag="section"
+          className="bg-section"
+          classId="bg5"
+          fluid={data.bgImage.childImageSharp.fluid} />
       </>
     )} />
 )

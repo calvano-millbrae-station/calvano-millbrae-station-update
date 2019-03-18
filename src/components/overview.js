@@ -1,8 +1,7 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import { Container, Row, Col } from 'reactstrap'
-
-import BgSection from './bgSection'
+import BackgroundImage from 'gatsby-background-image'
 
 export default ({data}) => (
   <StaticQuery
@@ -21,6 +20,24 @@ export default ({data}) => (
             }
           }
         }
+        sectionContent: allContentfulSectionContent(filter:{sectionTitle:{eq: "Overview"}}) {
+         edges {
+           node {
+             id
+            contentHeading
+            contentParagraphs {
+              contentParagraphs
+            }
+           }
+         }
+       }
+       bgImage: file(relativePath: { eq: "renderings/millbrae2.jpg" }) {
+         childImageSharp {
+           fluid(maxWidth: 2400) {
+             ...GatsbyImageSharpFluid_withWebp
+           }
+         }
+       }
       }
     `}
     render={data => (
@@ -33,18 +50,16 @@ export default ({data}) => (
               </header>
               <main>
                 <article>
-                  <h2 className="focus">"Connectivity, a source of innovation"</h2>
-                  <p className="mb-md-5">We envision a new transit-oriented development that will not only improve but benefit the Millbrae community. Our project consists of an eight-story class A office building, a 160-rooms boutique hotel, more than 10,000 square feet (SF) of ground floor promenade retail space and 901 shared below-grade parking spaces. The project will not only revitalize the immediate area but facilitate a critical linkage between the station and Downtown Millbrae. Establishing workspaces next to transit centers avoids workforce relocation while reducing the number of cars trips. As a result, we will facilitate efficiency and accessibility while improving the local community. Thanks to the support of Millbrae residents and local community leaders, we are working hard to make this project a reality.</p>
+                  {data.sectionContent.edges.map(({node}) => (
+                    <>
+                      <h2 className="focus">{node.contentHeading}</h2>
+                      <p>{node.contentParagraphs.contentParagraphs}</p>
+                    </>
+                  ))
+                  }
 
                   <h3>Reasons to support Millbrae Station</h3>
                   <ul>
-                    {/* <li><strong>Retail Promenade: </strong> By creating a retail promenade, residents and commuters will experience an active paseo bridging the connection between the Downtown and the largest multimodal public transit artery in the Bay Area. The promenade aims to spark opportunities for locals and visitors to shop and mingle.</li>
-
-                    <li><strong>Improved Pedestrian, Bike, and Transit Paths: </strong>From its inception, the project was contemplated from the prospective of improving transit connections and facilitating an improved experience for residents and commuters. Commuters will have a clear and safe path through the retail promenade, across El Camino Real to Chadbourne.</li>
-
-                    <li><strong>Crossing at Chadbourne: </strong>Our research into the area has shed light on the need for a solution to the many tragic pedestrian accidents and fatalities along the El Camino/Millbrae Ave corridor. Our project not only responds to those requests but has incorporated them into the retail promenade, and plants the seed envisioned in the city’s Priority Development Area Specific Plan, (and also in San Mateo County’s, Grand Boulevard Initiative). This signalized, “protected crosswalk” at Chadbourn provides a much-desired and much-needed improvement for the Millbrae community.</li>
-
-                    <li><strong>Increased Revenue – Transit Occupancy Tax: </strong>The high-density hotel is estimated to generate approximately $2,000,000 per year in income to city. Additionally, the project anticipates a land exchange whereby the City will own the land beneath the hotel and the applicant leases it. When the lease expires, the City will continue to own the land. This creates additional value because the City can monetize their land while retaining ownership.</li> */}
                     {data.allContentfulReasonsToSupport.edges.map(({ node }, index) => {
                       const { id, reasonTitle } = node
                       const { reasonDescription } = node.reasonDescription
@@ -58,7 +73,11 @@ export default ({data}) => (
             </Col>
           </Row>
         </Container>
-        <BgSection bgImageNum={2} />
+        <BackgroundImage
+          Tag="section"
+          className="bg-section"
+          classId="bg2"
+          fluid={data.bgImage.childImageSharp.fluid} />
       </>
     )}/>
 )

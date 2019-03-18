@@ -66,6 +66,27 @@ body {
   }
 }
 
+.img_fixed {
+  position: fixed;
+  // width: 33vw;
+  // height: 100vh;
+  // z-index: -1;
+  // right: 0;
+  // transform: perspective(0px);
+  /* added */
+}
+
+.img_fixed_container {
+  border: 1px solid red;
+  // width: 33vw;
+  // height: 100vh;
+  // right: 0;
+  // overflow: hidden;
+  /* added */
+  position: absolute;
+  // clip: rect(0, auto, auto, 0);
+}
+
 @media screen and (max-width: 575px) {
   body {
     header {
