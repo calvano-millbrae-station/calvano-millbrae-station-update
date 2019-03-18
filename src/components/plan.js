@@ -7,7 +7,7 @@ export default (props) => (
   <StaticQuery
     query={graphql`
       query {
-        sectionContent: allContentfulSectionContent(filter:{sectionTitle:{eq: "Plan"}}) {
+        sectionContent: allContentfulSectionContent(filter:{sectionTitle:{eq: "Plan"}}, , sort:{order: ASC, fields:[createdAt]}) {
          edges {
            node {
              id

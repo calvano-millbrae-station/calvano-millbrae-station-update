@@ -20,7 +20,7 @@ export default ({data}) => (
             }
           }
         }
-        sectionContent: allContentfulSectionContent(filter:{sectionTitle:{eq: "Overview"}}) {
+        sectionContent: allContentfulSectionContent(filter:{sectionTitle:{eq: "Overview"}}, sort:{order: ASC, fields:[createdAt]}) {
          edges {
            node {
              id
