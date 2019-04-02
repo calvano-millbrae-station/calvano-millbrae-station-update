@@ -1,24 +1,33 @@
 .bg-section {
-  background-attachment: fixed;
+  // background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 500px;
   width: 100%;
-  &.bg-image1 {
-    background-image: url("../assets/images/renderings/millbrae1.jpg");
-  }
-  &.bg-image2 {
-    background-image: url("../assets/images/renderings/millbrae2.jpg");
-  }
-  &.bg-image3 {
-    background-image: url("../assets/images/renderings/millbrae3.jpg");
-  }
-  &.bg-image4 {
-    background-image: url("../assets/images/renderings/millbrae4.jpg");
-  }
-  &.bg-image5 {
-    background-image: url("../assets/images/renderings/millbrae5.jpg");
+  // &.bg-image1 {
+  //   background-image: url("../assets/images/renderings/millbrae1.jpg");
+  // }
+  // &.bg-image2 {
+  //   background-image: url("../assets/images/renderings/millbrae2.jpg");
+  // }
+  // &.bg-image3 {
+  //   background-image: url("../assets/images/renderings/millbrae3.jpg");
+  // }
+  // &.bg-image4 {
+  //   background-image: url("../assets/images/renderings/millbrae4.jpg");
+  // }
+  // &.bg-image5 {
+  //   background-image: url("../assets/images/renderings/millbrae5.jpg");
+  // }
+}
+.gatsby-background-image-bg1,
+.gatsby-background-image-bg2,
+.gatsby-background-image-bg3,
+.gatsby-background-image-bg4,
+.gatsby-background-image-bg5 {
+  &::after {
+  background-attachment: fixed;
   }
 }
 

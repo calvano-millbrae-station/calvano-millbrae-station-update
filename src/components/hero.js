@@ -10,7 +10,7 @@ export default (props) => (
       query {
         hero: file(relativePath: { eq: "renderings/millbrae5.jpg" }) {
           childImageSharp {
-            fluid(maxWidth: 2048) {
+            fluid(maxWidth: 2400) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
