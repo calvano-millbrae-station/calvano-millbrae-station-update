@@ -1,40 +1,39 @@
 import React from 'react'
 import firebase from './firebase'
-import { CSVLink } from "react-csv";
+import { CSVLink } from 'react-csv'
 import { Button, Table, Container, Row, Col } from 'reactstrap'
 import Layout from './layout'
 
 export default class extends React.Component {
-
   state = {
-    contacts: []
+    contacts: [],
   }
 
   componentDidMount() {
-    const contactsRef = firebase.database().ref('contacts');
-    contactsRef.on('value', (snapshot) => {
-      let contacts = snapshot.val();
-      let newState = [];
+    const contactsRef = firebase.database().ref('contacts')
+    contactsRef.on('value', snapshot => {
+      let contacts = snapshot.val()
+      let newState = []
       for (let contact in contacts) {
         newState.push({
           id: contact,
           name: contacts[contact].name,
           email: contacts[contact].email,
           updatesOnly: contacts[contact].updatesOnly,
-          date: contacts[contact].date
-        });
+          date: contacts[contact].date,
+        })
       }
       this.setState({
-        contacts: newState
-      });
-    });
+        contacts: newState,
+      })
+    })
   }
 
   buttonOnClick = () => {
     this.props.auth.logout()
     // can't get redirects to work via auth0 api
     // so I'm cheating
-    window.open("https://millbraestation.com/", "_self")
+    window.open('https://millbraestation.com/', '_self')
   }
 
   render() {
@@ -63,14 +62,17 @@ export default class extends React.Component {
                 <tbody>
                   {this.state.contacts.map((contact, index) => (
                     <tr key={`tr-${contact.id}`}>
-                      <th key={`th-${contact.id}`} scope="row">{index + 1}</th>
+                      <th key={`th-${contact.id}`} scope="row">
+                        {index + 1}
+                      </th>
                       <td key={`name-${contact.id}`}>{contact.name}</td>
                       <td key={`email-${contact.id}`}>{contact.email}</td>
-                      <td key={`updates-${contact.id}`}>{contact.updatesOnly}</td>
+                      <td key={`updates-${contact.id}`}>
+                        {contact.updatesOnly}
+                      </td>
                       <td key={`date-${contact.id}`}>{contact.date}</td>
                     </tr>
-                  ))
-                  }
+                  ))}
                 </tbody>
               </Table>
               <CSVLink data={this.state.contacts}>Download csv file</CSVLink>
