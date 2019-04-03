@@ -2,8 +2,9 @@
 import auth0 from 'auth0-js'
 import { navigate } from 'gatsby'
 
-const AUTH0_DOMAIN = process.env.AUTH0_DOMAIN
-const AUTH0_CLIENT_ID = process.env.AUTH0_CLIENT_ID
+const AUTH0_DOMAIN = 'millbrae-station-dev.auth0.com'
+const AUTH0_CLIENT_ID = 'SX7G6aSACGx4PltI81vd1UVxNMjqIaMg'
+console.log('domain', AUTH0_DOMAIN, 'id', AUTH0_CLIENT_ID)
 
 export default class Auth {
   auth0 = new auth0.WebAuth({
@@ -20,7 +21,7 @@ export default class Auth {
   }
 
   logout = () => {
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
       localStorage.removeItem('access_token')
       localStorage.removeItem('id_token')
       localStorage.removeItem('expires_at')
