@@ -34,10 +34,13 @@ export default props => (
                   content="Learn how the Millbrae Station project will revitalize the city through the development of an office building, a boutique hotel, and a retail space."
                 />
               </Helmet>
-              <BackgroundImage
+              {/* <BackgroundImage
                 Tag="section"
                 className={`hero ${props.isHome ? '' : 'not-home-hero'}`}
                 fluid={data.contentfulAsset.fluid}
+              > */}
+              <section
+                className={`hero ${props.isHome ? '' : 'not-home-hero'}`}
               >
                 <div className="content">
                   <img
@@ -57,7 +60,8 @@ export default props => (
                   />
                   {/* {props.isAdmin && <span>Admin Page</span>} */}
                 </div>
-              </BackgroundImage>
+              </section>
+              {/* </BackgroundImage> */}
             </>
           ) : (
             <div className={`hero ${props.isHome ? '' : 'not-home-hero'}`}>
