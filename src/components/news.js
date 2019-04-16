@@ -29,7 +29,7 @@ export default ({ data }) => (
             }
           }
         }
-        contentfulAsset(title: { eq: "millbrae5" }) {
+        contentfulAsset(title: { eq: "millbrae1" }) {
           fluid(quality: 100, maxWidth: 2400) {
             src
             sizes
