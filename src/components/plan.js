@@ -26,14 +26,9 @@ export default props => (
             node {
               fluid(quality: 100, maxWidth: 2400) {
                 src
+                sizes
+                srcSet
               }
-            }
-          }
-        }
-        bgImage: file(relativePath: { eq: "renderings/millbrae4.jpg" }) {
-          childImageSharp {
-            fluid(maxWidth: 2400) {
-              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
@@ -89,7 +84,7 @@ export default props => (
                           </>
                         ))}
 
-                      <a
+                      {/* <a
                         href={require('../assets/downloadables/Plan-Final.pdf')}
                         className="pdf-link"
                       >
@@ -98,7 +93,7 @@ export default props => (
                             Millbrae Station Specific Plan PDF Download
                           </strong>
                         </p>
-                      </a>
+                      </a> */}
                       {/* <p><strong>Millbrae Station Fact Sheet: </strong> <a href={require('../assets/downloadables/Fact-Sheet-Final.pdf')} className="pdf-link">Click here</a></p> */}
 
                       <h2 className="focus mt-5">Renderings</h2>
@@ -119,7 +114,7 @@ export default props => (
             Tag="section"
             className="bg-section"
             classId="bg4"
-            fluid={data.bgImage.childImageSharp.fluid}
+            fluid={data.renderings.edges[3].node.fluid}
           />
         </>
       )

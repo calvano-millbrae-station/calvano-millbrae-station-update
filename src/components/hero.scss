@@ -11,15 +11,18 @@
 }
 
 .content {
-  height: 200px;
+  // height: 200px;
+  padding: 20px;
   width: inherit;
   background-color: $mask;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  img {
-    width: 350px;
+  align-items: flex-start;
+  justify-content: space-between;
+  .site-logo {
+    width: 200px;
+  }
+  .header-logo {
+    width: 130px;
   }
   span {
     text-transform: uppercase;

@@ -29,11 +29,11 @@ export default ({ data }) => (
             }
           }
         }
-        bgImage: file(relativePath: { eq: "renderings/millbrae5.jpg" }) {
-          childImageSharp {
-            fluid(maxWidth: 2400) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
+        contentfulAsset(title: { eq: "millbrae5" }) {
+          fluid(quality: 100, maxWidth: 2400) {
+            src
+            sizes
+            srcSet
           }
         }
       }
@@ -81,7 +81,7 @@ export default ({ data }) => (
           Tag="section"
           className="bg-section"
           classId="bg5"
-          fluid={data.bgImage.childImageSharp.fluid}
+          fluid={data.contentfulAsset.fluid}
         />
       </>
     )}

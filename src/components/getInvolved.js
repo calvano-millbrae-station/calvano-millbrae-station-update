@@ -1,8 +1,5 @@
 import React from 'react'
-import {
-  Container,
-  Row,
-  Col } from 'reactstrap'
+import { Container, Row, Col } from 'reactstrap'
 import Form from './form'
 import { StaticQuery, graphql } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
@@ -11,11 +8,11 @@ export default () => (
   <StaticQuery
     query={graphql`
       query {
-        bgImage: file(relativePath: { eq: "renderings/millbrae3.jpg" }) {
-          childImageSharp {
-            fluid(maxWidth: 2400) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
+        contentfulAsset(title: { eq: "millbrae3" }) {
+          fluid(quality: 100, maxWidth: 2400) {
+            src
+            sizes
+            srcSet
           }
         }
       }
@@ -40,7 +37,9 @@ export default () => (
           Tag="section"
           className="bg-section"
           classId="bg3"
-          fluid={data.bgImage.childImageSharp.fluid} />
+          fluid={data.contentfulAsset.fluid}
+        />
       </>
-    )} />
+    )}
+  />
 )

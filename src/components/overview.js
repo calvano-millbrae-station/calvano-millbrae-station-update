@@ -29,16 +29,18 @@ export default ({ data }) => (
               id
               contentHeading
               contentParagraphs {
-                contentParagraphs
+                childMarkdownRemark {
+                  html
+                }
               }
             }
           }
         }
-        bgImage: file(relativePath: { eq: "renderings/millbrae2.jpg" }) {
-          childImageSharp {
-            fluid(maxWidth: 2400) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
+        contentfulAsset(title: { eq: "millbrae2" }) {
+          fluid(quality: 100, maxWidth: 2400) {
+            src
+            sizes
+            srcSet
           }
         }
       }
@@ -56,8 +58,16 @@ export default ({ data }) => (
                   {data.sectionContent !== null &&
                     data.sectionContent.edges.map(({ node }) => (
                       <>
-                        <h2 className="focus">{node.contentHeading}</h2>
-                        <p>{node.contentParagraphs.contentParagraphs}</p>
+                        {node.contentHeading !== null && (
+                          <h2 className="focus">{node.contentHeading}</h2>
+                        )}
+                        <div
+                          className="overview-paragraphs"
+                          dangerouslySetInnerHTML={{
+                            __html:
+                              node.contentParagraphs.childMarkdownRemark.html,
+                          }}
+                        />
                       </>
                     ))}
 
@@ -86,7 +96,7 @@ export default ({ data }) => (
           Tag="section"
           className="bg-section"
           classId="bg2"
-          fluid={data.bgImage.childImageSharp.fluid}
+          fluid={data.contentfulAsset.fluid}
         />
       </>
     )}

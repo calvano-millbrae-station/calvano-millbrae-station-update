@@ -4,4 +4,34 @@
     width: 80%;
     margin: auto;
   }
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    height: 100px;
+    width: 100px;
+    outline: black;
+    background-size: 100%, 100%;
+    background-image: none;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .carousel-control-prev {
+    left: -120px;
+  }
+
+  .carousel-control-next {
+    right: -120px;
+  }
+
+  .carousel-control-next-icon:after {
+    content: '>';
+    font-size: 75px;
+    color: black;
+  }
+
+  .carousel-control-prev-icon:after {
+    content: '<';
+    font-size: 75px;
+    color: black;
+  }
 }
