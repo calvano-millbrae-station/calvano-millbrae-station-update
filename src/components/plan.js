@@ -16,7 +16,9 @@ export default props => (
               id
               contentHeading
               contentParagraphs {
-                contentParagraphs
+                childMarkdownRemark {
+                  html
+                }
               }
             }
           }
@@ -79,8 +81,17 @@ export default props => (
                       {data.sectionContent !== null &&
                         data.sectionContent.edges.map(({ node }) => (
                           <>
-                            <h2 className="focus">{node.contentHeading}</h2>
-                            <p>{node.contentParagraphs.contentParagraphs}</p>
+                            {node.contentHeading !== null && (
+                              <h2 className="focus">{node.contentHeading}</h2>
+                            )}
+                            <div
+                              className="overview-paragraphs"
+                              dangerouslySetInnerHTML={{
+                                __html:
+                                  node.contentParagraphs.childMarkdownRemark
+                                    .html,
+                              }}
+                            />
                           </>
                         ))}
 
