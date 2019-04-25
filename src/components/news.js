@@ -30,7 +30,7 @@ export default ({ data }) => (
           }
         }
         contentfulAsset(title: { eq: "millbrae4" }) {
-          fluid(quality: 25, maxWidth: 2400) {
+          fluid(quality: 35, maxWidth: 2400) {
             src
             sizes
             srcSet

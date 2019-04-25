@@ -26,7 +26,7 @@ export default props => (
         renderings: allContentfulAsset(sort: { order: ASC, fields: [title] }) {
           edges {
             node {
-              fluid(quality: 25, maxWidth: 2400) {
+              fluid(quality: 50, maxWidth: 2400) {
                 src
                 sizes
                 srcSet

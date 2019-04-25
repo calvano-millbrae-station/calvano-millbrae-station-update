@@ -9,7 +9,7 @@ export default props => (
     query={graphql`
       query {
         contentfulAsset(title: { eq: "millbrae5" }) {
-          fluid(quality: 25, maxWidth: 2400) {
+          fluid(quality: 20, maxWidth: 2400) {
             src
             sizes
             srcSet
