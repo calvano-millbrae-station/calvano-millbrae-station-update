@@ -41,27 +41,27 @@ export default props => (
       </div> */}
       <li>
         <Scroll type="id" element="overview" offset={0}>
-          <a href="#">Overview</a>
+          <a href="#overview">Overview</a>
         </Scroll>
       </li>
       <li>
         <Scroll type="id" element="get-involved" offset={0}>
-          <a href="#">Get Involved</a>
+          <a href="#get-involved">Get Involved</a>
         </Scroll>
       </li>
       <li>
         <Scroll type="id" element="plan" offset={0}>
-          <a href="#">Plan and Renderings</a>
+          <a href="#plan">Plan and Renderings</a>
         </Scroll>
       </li>
       <li>
         <Scroll type="id" element="news" offset={0}>
-          <a href="#">News</a>
+          <a href="#news">News</a>
         </Scroll>
       </li>
       <li>
         <Scroll type="id" element="contact-us" offset={0}>
-          <a href="#">Contact Us</a>
+          <a href="#contact-us">Contact Us</a>
         </Scroll>
       </li>
     </Scrollspy>
