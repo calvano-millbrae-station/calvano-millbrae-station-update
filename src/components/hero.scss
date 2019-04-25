@@ -2,11 +2,14 @@
   // background-image: url("../assets/images/renderings/millbrae5.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 50% 80% !important;
   width: 100%;
   height: 650px;
   &.not-home-hero {
     height: 300px;
+  }
+  &::before,
+  &::after {
+    background-position: 50% 80%;
   }
 }
 

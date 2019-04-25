@@ -8,7 +8,7 @@ import Scroll from './scroll'
 
 export default props => (
   <nav id="nav" className={props.sticky ? 'alt' : ''}>
-    <div className="logo-wrapper-outer">
+    <div className="logo-wrapper">
       <a href="http://www.calvano.com">
         <img
           src={require('../assets/images/header-logo.png')}
@@ -30,7 +30,7 @@ export default props => (
       currentClassName="is-active"
       offset={250}
     >
-      <div className="logo-wrapper-inner">
+      {/* <div className="logo-wrapper-inner">
         <a href="http://www.calvano.com">
           <img
             src={require('../assets/images/header-logo.png')}
@@ -38,7 +38,7 @@ export default props => (
             className="header-logo"
           />
         </a>
-      </div>
+      </div> */}
       <li>
         <Scroll type="id" element="overview" offset={0}>
           <a href="#">Overview</a>
