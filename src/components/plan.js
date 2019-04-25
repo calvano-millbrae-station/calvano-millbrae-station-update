@@ -23,7 +23,7 @@ export default props => (
             }
           }
         }
-        renderings: allContentfulAsset {
+        renderings: allContentfulAsset(sort: { order: ASC, fields: [title] }) {
           edges {
             node {
               fluid(quality: 100, maxWidth: 2400) {
@@ -37,36 +37,14 @@ export default props => (
       }
     `}
     render={data => {
-      const renderingsArray = data.renderings.edges.map(
-        ({ node }) => node.fluid.src
-      )
-      const items = [
-        {
-          src: renderingsArray[0],
-          altText: 'Millbrae Station Render 1',
+      const items = data.renderings.edges.map(({ node }, index) => {
+        return {
+          src: node.fluid.src,
+          altText: `Millbrae Station Render ${index + 1}`,
           caption: '',
-        },
-        {
-          src: renderingsArray[1],
-          altText: 'Millbrae Station Render 2',
-          caption: '',
-        },
-        {
-          src: renderingsArray[2],
-          altText: 'Millbrae Station Render 3',
-          caption: '',
-        },
-        {
-          src: renderingsArray[3],
-          altText: 'Millbrae Station Render 4',
-          caption: '',
-        },
-        {
-          src: renderingsArray[4],
-          altText: 'Millbrae Station Render 5',
-          caption: '',
-        },
-      ]
+        }
+      })
+      console.log('items: ', items)
       return (
         <>
           <div id="plan">
@@ -125,7 +103,7 @@ export default props => (
             Tag="section"
             className="bg-section"
             classId="bg4"
-            fluid={data.renderings.edges[3].node.fluid}
+            fluid={data.renderings.edges[2].node.fluid}
           />
         </>
       )

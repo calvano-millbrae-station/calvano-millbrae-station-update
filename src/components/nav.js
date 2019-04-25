@@ -6,8 +6,17 @@ import Scroll from './scroll'
 
 // import logo from '../assets/images/logo.png'
 
-export default (props) => (
+export default props => (
   <nav id="nav" className={props.sticky ? 'alt' : ''}>
+    <div className="logo-wrapper-outer">
+      <a href="http://www.calvano.com">
+        <img
+          src={require('../assets/images/header-logo.png')}
+          alt="Calvano Logo"
+          className="header-logo"
+        />
+      </a>
+    </div>
     <Scrollspy
       items={[
         // 'top',
@@ -21,7 +30,15 @@ export default (props) => (
       currentClassName="is-active"
       offset={250}
     >
-      {/* eslint-disable */}
+      <div className="logo-wrapper-inner">
+        <a href="http://www.calvano.com">
+          <img
+            src={require('../assets/images/header-logo.png')}
+            alt="Calvano Logo"
+            className="header-logo"
+          />
+        </a>
+      </div>
       <li>
         <Scroll type="id" element="overview" offset={0}>
           <a href="#">Overview</a>
@@ -37,11 +54,6 @@ export default (props) => (
           <a href="#">Plan and Renderings</a>
         </Scroll>
       </li>
-      {/* <li>
-        <Scroll type="id" element="renderings" offset={0}>
-          <a href="#">Renderings</a>
-        </Scroll>
-      </li> */}
       <li>
         <Scroll type="id" element="news" offset={0}>
           <a href="#">News</a>
@@ -52,7 +64,6 @@ export default (props) => (
           <a href="#">Contact Us</a>
         </Scroll>
       </li>
-      {/* eslint-enable */}
     </Scrollspy>
   </nav>
 )

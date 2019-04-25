@@ -8,7 +8,7 @@ export default () => (
   <StaticQuery
     query={graphql`
       query {
-        contentfulAsset(title: { eq: "millbrae3" }) {
+        contentfulAsset(title: { eq: "millbrae2" }) {
           fluid(quality: 100, maxWidth: 2400) {
             src
             sizes

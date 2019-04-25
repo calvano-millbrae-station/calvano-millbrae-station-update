@@ -34,52 +34,27 @@ export default props => (
                   content="Learn how the Millbrae Station project will revitalize the city through the development of an office building, a boutique hotel, and a retail space."
                 />
               </Helmet>
-              {/* <BackgroundImage
+              <BackgroundImage
                 Tag="section"
                 className={`hero ${props.isHome ? '' : 'not-home-hero'}`}
                 fluid={data.contentfulAsset.fluid}
-              > */}
-              <section
-                className={`hero ${props.isHome ? '' : 'not-home-hero'}`}
               >
                 <div className="content">
                   <img
-                    src={require('../assets/images/header-logo.png')}
-                    alt="Calvano Logo"
-                    className="header-logo"
-                  />
-                  <img
-                    src={require('../assets/images/site-logo-update.png')}
+                    src={require('../assets/images/site-logo.png')}
                     alt="Millbrae Station Logo"
-                    className="site-logo"
                   />
-                  <img
-                    src={require('../assets/images/header-logo.png')}
-                    alt="Calvano Logo"
-                    className="header-logo"
-                  />
-                  {/* {props.isAdmin && <span>Admin Page</span>} */}
+                  <span>
+                    {props.isAdmin ? 'Admin Page' : 'Millbrae Station'}
+                  </span>
                 </div>
-              </section>
-              {/* </BackgroundImage> */}
+              </BackgroundImage>
             </>
           ) : (
             <div className={`hero ${props.isHome ? '' : 'not-home-hero'}`}>
               <div className="content">
-                <img
-                  src={require('../assets/images/header-logo.png')}
-                  alt="Calvano Logo"
-                />
-                <img
-                  src={require('../assets/images/site-logo-update.png')}
-                  alt="Millbrae Station Logo"
-                />
-                <img
-                  src={require('../assets/images/header-logo.png')}
-                  alt="Calvano Logo"
-                />
-                {/* {props.isAdmin && <span>Admin Page</span>} */}
-                {/* <span>{props.isAdmin ? "Admin Page" : "Millbrae Station"}</span> */}
+                <img src={require('../assets/images/site-logo.png')} alt="" />
+                <span>{props.isAdmin ? 'Admin Page' : 'Millbrae Station'}</span>
               </div>
             </div>
           )}
