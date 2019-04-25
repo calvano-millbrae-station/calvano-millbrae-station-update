@@ -11,6 +11,7 @@
 .gatsby-background-image-bg3,
 .gatsby-background-image-bg4,
 .gatsby-background-image-bg5 {
+  &::before,
   &::after {
   background-attachment: fixed;
   }
