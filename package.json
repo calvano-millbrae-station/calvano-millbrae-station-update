@@ -24,7 +24,7 @@
     "gatsby-source-firebase": "^1.0.0",
     "gatsby-transformer-remark": "^2.2.5",
     "gatsby-transformer-sharp": "^2.1.13",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.2",
     "react-csv": "^1.1.1",
